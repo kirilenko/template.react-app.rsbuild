@@ -32,3 +32,9 @@ Preview the production build locally:
 ```bash
 pnpm preview
 ```
+
+Run unit tests via Jest:
+
+```bash
+pnpm test
+```
