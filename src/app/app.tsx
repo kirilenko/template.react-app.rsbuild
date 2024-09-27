@@ -1,9 +1,13 @@
+import { FC } from 'react'
+
+import { Title } from '@/shared/ui/title'
+
 import './app.css'
 
-const App = () => {
+const App: FC = () => {
   return (
     <div className="app">
-      <h1>Rsbuild w/ React</h1>
+      <Title content="Rsbuild w/ React" />
     </div>
   )
 }

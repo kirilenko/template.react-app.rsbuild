@@ -1,4 +1,4 @@
-const internalPackages = '@app|@entities|@modules|@pages|@public|@shared'
+const internalPackages = '@/app|@/entities|@/modules|@/pages|@/public|@/shared'
 
 const styleExtensions = '\\.style$|\\.s?css$'
 
@@ -42,10 +42,10 @@ const rules = {
         'src/**/*',
         '../*',
         '../**/*',
-        '@app/**/*',
-        '@entities/**/*', // use @entities/something only
-        '@modules/**/*', // use @modules/something only
-        '@shared/!(lib|ui)/**/*',
+        '@/app/**/*',
+        '@/entities/**/*', // use @/entities/something only
+        '@/modules/**/*', // use @/modules/something only
+        '@/shared/!(lib|ui)/**/*',
       ],
     },
   ], // - for local import only from fsd-index (features sliced design)
@@ -128,7 +128,10 @@ const extendsDict = {
     'plugin:react-hooks/recommended', // from eslint-plugin-react-hooks
     'plugin:jsx-a11y/recommended', // from eslint-plugin-jsx-a11y
   ],
-  typescript: ['plugin:@typescript-eslint/recommended'],
+  typescript: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript', // from enables eslint-plugin-import
+  ],
 }
 
 module.exports = {
@@ -150,10 +153,16 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
+    'eslint-plugin-import',
     'hooks', // from eslint-plugin-hooks
     'sort-keys-fix', // from eslint-plugin-sort-keys-fix
     'simple-import-sort', // from eslint-plugin-simple-import-sort
     'react-refresh', // from eslint-plugin-react-refresh
   ],
   rules,
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
 }

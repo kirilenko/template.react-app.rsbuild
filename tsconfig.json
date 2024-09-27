@@ -6,11 +6,14 @@
     "lib": ["DOM", "ES2020"],
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2020",
     "useDefineForClassFields": true
   },
-  "include": ["./*.cjs", "./*.ts", "./src", "./tests"]
+  "include": ["./*.cjs", "./*.js", "./*.ts", "./src", "./tests"]
 }
