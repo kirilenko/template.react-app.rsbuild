@@ -10,6 +10,7 @@
     "pretty": "prettier --write 'src/**/**.{ts,tsx,css,style.ts}'",
     "format": "pnpm eslint && pnpm pretty && scripts/postformat.sh",
     "test": "NODE_NO_WARNINGS=1 jest",
+    "test:ci": "NODE_NO_WARNINGS=1 jest --ci",
     "build": "rsbuild build",
     "preview": "rsbuild preview"
   },

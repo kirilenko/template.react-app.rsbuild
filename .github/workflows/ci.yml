@@ -1,4 +1,4 @@
-name: Deploy
+name: Test and Build
 
 on:
   push:
@@ -77,6 +77,9 @@ jobs:
 
       - name: Install dependencies
         run: node -v && pnpm -v && pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm test:ci
 
       - name: Build
         if: needs.branch.outputs.branch_name == 'dev' || needs.branch.outputs.branch_name == 'stage' || needs.branch.outputs.branch_name == 'main'
