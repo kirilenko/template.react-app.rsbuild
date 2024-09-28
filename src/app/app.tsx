@@ -6,7 +6,7 @@ import './app.css'
 
 const App: FC = () => {
   return (
-    <div className="app">
+    <div className="h-full flex items-center justify-center">
       <Title content="Rsbuild w/ React" />
     </div>
   )

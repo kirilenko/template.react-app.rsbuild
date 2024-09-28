@@ -15,5 +15,5 @@
     "target": "ES2020",
     "useDefineForClassFields": true
   },
-  "include": ["./*.cjs", "./*.js", "./*.ts", "./src", "./tests"]
+  "include": ["./*.cjs", "./*.js", "./*.mjs", "./*.ts", "./src", "./tests"]
 }
