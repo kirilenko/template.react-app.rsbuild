@@ -11,7 +11,9 @@
     "format": "pnpm eslint && pnpm pretty && scripts/postformat.sh",
     "test": "NODE_NO_WARNINGS=1 jest",
     "test:ci": "NODE_NO_WARNINGS=1 jest --ci",
-    "build": "rsbuild build",
+    "build:dev": "rsbuild build --env-mode development",
+    "build:stage": "rsbuild build --env-mode staging",
+    "build:main": "rsbuild build --env-mode production",
     "preview": "rsbuild preview"
   },
   "dependencies": {

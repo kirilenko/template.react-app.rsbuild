@@ -83,7 +83,7 @@ jobs:
 
       - name: Build
         if: needs.branch.outputs.branch_name == 'dev' || needs.branch.outputs.branch_name == 'stage' || needs.branch.outputs.branch_name == 'main'
-        run: pnpm build
+        run: pnpm build:${{ needs.branch.outputs.branch_name }}
 
       - name: Create Bundle
         if: needs.branch.outputs.branch_name == 'dev' || needs.branch.outputs.branch_name == 'stage' || needs.branch.outputs.branch_name == 'main'
