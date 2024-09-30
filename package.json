@@ -5,15 +5,15 @@
   "version": "0.0.0",
   "scripts": {
     "setup": "./scripts/nvm-use.sh && pnpm i && pnpm audit",
-    "dev": "rsbuild dev --open",
+    "dev": "dotenvx run --env-file=.env.common -- rsbuild dev --open",
     "eslint": "eslint . --fix 'src/**/**.{ts,tsx}' --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier --write 'src/**/**.{ts,tsx,css,style.ts}'",
     "format": "pnpm eslint && pnpm pretty && scripts/postformat.sh",
     "test": "NODE_NO_WARNINGS=1 jest --watch",
     "test:ci": "NODE_NO_WARNINGS=1 jest --ci",
-    "build:dev": "rsbuild build --env-mode development",
-    "build:stage": "rsbuild build --env-mode staging",
-    "build:main": "rsbuild build --env-mode production",
+    "build:dev": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode development",
+    "build:stage": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode staging",
+    "build:main": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode production",
     "preview": "rsbuild preview"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.14.2",
     "@rsbuild/core": "^1.0.4",
     "@rsbuild/plugin-eslint": "^1.0.3",
     "@rsbuild/plugin-react": "^1.0.2",
