@@ -1,0 +1,1 @@
+export { menuConfig } from './menu'

@@ -56,6 +56,8 @@ const rules = {
 
   'no-redeclare': 'off', // - for typescript fn-overloading
 
+  'no-restricted-exports': 'off', // - for export { default } from somewhere
+
   'no-underscore-dangle': 'off', // - for typescript getters/setters
 
   'no-unused-vars': 'warn',
