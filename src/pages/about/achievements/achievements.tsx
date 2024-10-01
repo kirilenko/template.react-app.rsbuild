@@ -8,7 +8,7 @@ const Achievements: FC = () => (
     <Helmet>
       <title>Achievements</title>
     </Helmet>
-    <div className="flex flex-1 gap-4 overflow-y-auto bg-stone-800">
+    <div className="absolute left-0 top-0 flex min-h-full w-full gap-4 overflow-y-auto bg-stone-800">
       <NavLink className="w-8 flex-none text-4xl" to="/about">
         ←
       </NavLink>

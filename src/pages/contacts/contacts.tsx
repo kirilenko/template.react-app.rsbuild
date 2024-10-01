@@ -2,15 +2,19 @@ import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { loremIpsum } from 'lorem-ipsum'
 
+import { FadeContainer } from '@/shared/animation'
+
 const Contacts: FC = () => (
   <>
     <Helmet>
       <title>Contacts</title>
     </Helmet>
-    <div className="flex-1 overflow-y-auto bg-stone-800 px-8 py-16">
-      <h1 className="mb-4 text-4xl font-bold text-white">Contacts</h1>
-      {loremIpsum({ count: 5, units: 'paragraphs' })}
-    </div>
+    <FadeContainer id="contacts">
+      <div className="absolute left-0 top-0 h-full w-full overflow-y-auto bg-stone-800 px-8 py-16">
+        <h1 className="mb-4 text-4xl font-bold text-white">Contacts</h1>
+        {loremIpsum({ count: 5, units: 'paragraphs' })}
+      </div>
+    </FadeContainer>
   </>
 )
 

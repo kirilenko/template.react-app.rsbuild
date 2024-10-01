@@ -29,7 +29,9 @@ const App: FC = () => {
               <hr className="my-8 border-gray-300" />
               {loremIpsum({ count: 10 })}
             </div>
-            <Routes>{Object.values(routingConfig).map(createRoute)}</Routes>
+            <div className="relative flex-1">
+              <Routes>{Object.values(routingConfig).map(createRoute)}</Routes>
+            </div>
           </div>
         </Router>
       </HelmetProvider>
