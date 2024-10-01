@@ -11,7 +11,6 @@ const routingConfig: Record<string, RouteConfig> = {
     id: 'contacts',
     isLazy: true,
     path: '/contacts',
-    title: 'Contacts',
   },
   home: {
     component: Home,

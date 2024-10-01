@@ -15,14 +15,12 @@ function createRoute({
   path,
   ...routeElementProps
 }: RouteConfig): ReactNode {
-  const hasNestedRoutes = Object.keys(nestedRouteConfig).length
-
   const routeProps = {
-    element: <RouteElement {...routeElementProps} isPage={!hasNestedRoutes} />,
+    element: <RouteElement {...routeElementProps} />,
     ...{ index, path },
   } as RouteProps
 
-  if (!hasNestedRoutes) {
+  if (!Object.keys(nestedRouteConfig).length) {
     return <Route key={routeElementProps.id} {...routeProps} />
   }
 

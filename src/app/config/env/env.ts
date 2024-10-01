@@ -14,7 +14,6 @@ const asString = (value: string | null = null): string => {
 }
 
 const env = {
-  PUBLIC_DEFAULT_PAGE_TITLE: asString(process.env.PUBLIC_DEFAULT_PAGE_TITLE),
   PUBLIC_SOME_BOOLEAN: asBoolean(process.env.PUBLIC_SOME_BOOLEAN),
   PUBLIC_SOME_NUMBER: asNumber(process.env.PUBLIC_SOME_NUMBER),
   PUBLIC_TIMESTAMP: asString(process.env.PUBLIC_TIMESTAMP),

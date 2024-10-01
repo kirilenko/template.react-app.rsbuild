@@ -1,18 +1,17 @@
 import { FC } from 'react'
+import { HelmetProvider } from 'react-helmet-async'
 import { HashRouter as Router, NavLink, Routes } from 'react-router-dom'
 import { loremIpsum } from 'lorem-ipsum'
 
 import { env, menuConfig, routingConfig } from '@/app/config'
-import { createRoute, RoutingProvider } from '@/shared/routing'
+import { createRoute } from '@/shared/routing'
 
 import './app.css'
 
 const App: FC = () => {
   return (
     <>
-      <RoutingProvider
-        defaultPageTitle={(env.PUBLIC_DEFAULT_PAGE_TITLE as string) ?? ''}
-      >
+      <HelmetProvider>
         <Router>
           <div className="flex h-full w-full items-stretch justify-stretch">
             <div className="flex w-64 flex-none flex-col items-stretch justify-start overflow-y-auto bg-stone-600 px-8 py-16">
@@ -33,7 +32,7 @@ const App: FC = () => {
             <Routes>{Object.values(routingConfig).map(createRoute)}</Routes>
           </div>
         </Router>
-      </RoutingProvider>
+      </HelmetProvider>
       <span className="hidden">{env.PUBLIC_TIMESTAMP}</span>
     </>
   )
