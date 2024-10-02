@@ -35,6 +35,7 @@ const App: FC = () => {
           </div>
         </Router>
       </HelmetProvider>
+      <span className="hidden">{env.PUBLIC_COMMON_VAR}</span>
       <span className="hidden">{env.PUBLIC_TIMESTAMP}</span>
     </>
   )

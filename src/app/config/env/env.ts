@@ -14,6 +14,7 @@ const asString = (value: string | null = null): string => {
 }
 
 const env = {
+  PUBLIC_COMMON_VAR: asString(process.env.PUBLIC_COMMON_VAR),
   PUBLIC_SOME_BOOLEAN: asBoolean(process.env.PUBLIC_SOME_BOOLEAN),
   PUBLIC_SOME_NUMBER: asNumber(process.env.PUBLIC_SOME_NUMBER),
   PUBLIC_TIMESTAMP: asString(process.env.PUBLIC_TIMESTAMP),
