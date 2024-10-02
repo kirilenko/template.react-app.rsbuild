@@ -6,12 +6,6 @@ import { about } from './root.about'
 
 const routingConfig: Record<string, RouteConfig> = {
   about,
-  contacts: {
-    component: lazy(() => import('@/pages/contacts')),
-    id: 'contacts',
-    isLazy: true,
-    path: '/contacts',
-  },
   home: {
     component: Home,
     id: 'home',
@@ -22,6 +16,12 @@ const routingConfig: Record<string, RouteConfig> = {
     id: 'noMatch',
     isLazy: true,
     path: '*',
+  },
+  users: {
+    component: lazy(() => import('@/pages/users')),
+    id: 'users',
+    isLazy: true,
+    path: '/users',
   },
 }
 

@@ -4,18 +4,18 @@ import { loremIpsum } from 'lorem-ipsum'
 
 import { FadeContainer } from '@/shared/animation'
 
-const Contacts: FC = () => (
+const Users: FC = () => (
   <>
     <Helmet>
-      <title>Contacts</title>
+      <title>Users</title>
     </Helmet>
-    <FadeContainer id="contacts">
+    <FadeContainer id="users">
       <div className="absolute left-0 top-0 h-full w-full overflow-y-auto bg-stone-800 px-8 py-16">
-        <h1 className="mb-4 text-4xl font-bold text-white">Contacts</h1>
+        <h1 className="mb-4 text-4xl font-bold text-white">Users</h1>
         {loremIpsum({ count: 5, units: 'paragraphs' })}
       </div>
     </FadeContainer>
   </>
 )
 
-export { Contacts }
+export { Users }

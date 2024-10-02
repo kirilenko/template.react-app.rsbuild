@@ -16,9 +16,9 @@ const menuConfig: MenuItemConfig[] = [
     title: 'About',
   },
   {
-    id: 'contacts',
-    path: '/contacts',
-    title: 'Contacts',
+    id: 'users',
+    path: '/users',
+    title: 'Users',
   },
 ]
 
