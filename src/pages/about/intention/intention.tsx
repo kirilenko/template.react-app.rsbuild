@@ -3,13 +3,15 @@ import { Helmet } from 'react-helmet-async'
 import { NavLink } from 'react-router-dom'
 import { loremIpsum } from 'lorem-ipsum'
 
+import { paths } from '@/app/config/paths'
+
 const Intention: FC = () => (
   <>
     <Helmet>
       <title>Intention</title>
     </Helmet>
     <div className="absolute left-0 top-0 flex min-h-full w-full gap-4 overflow-y-auto bg-stone-800">
-      <NavLink className="w-8 flex-none text-4xl" to="/about">
+      <NavLink className="w-8 flex-none text-4xl" to={paths.root.about.index}>
         ←
       </NavLink>
       <div className="flex-1">

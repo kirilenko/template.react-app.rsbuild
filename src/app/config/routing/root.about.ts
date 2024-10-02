@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 
+import { paths } from '@/app/config/paths'
 import { RouteConfig } from '@/shared/routing'
 
 const about: RouteConfig = {
@@ -17,16 +18,16 @@ const about: RouteConfig = {
       component: lazy(() => import('@/pages/about/achievements')),
       id: 'achievements',
       isLazy: true,
-      path: 'achievements',
+      path: paths.root.about.achievements.index,
     },
     intention: {
       component: lazy(() => import('@/pages/about/intention')),
       id: 'intention',
       isLazy: true,
-      path: 'intention',
+      path: paths.root.about.intention.index,
     },
   },
-  path: '/about',
+  path: paths.root.about.index,
 }
 
 export { about }

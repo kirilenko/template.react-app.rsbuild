@@ -3,7 +3,9 @@ import { HelmetProvider } from 'react-helmet-async'
 import { HashRouter as Router, NavLink, Routes } from 'react-router-dom'
 import { loremIpsum } from 'lorem-ipsum'
 
-import { env, menuConfig, routingConfig } from '@/app/config'
+import { env } from '@/app/config/env'
+import { menuConfig } from '@/app/config/menu'
+import { routingConfig } from '@/app/config/routing'
 import { createRoute } from '@/shared/routing'
 
 import './app.css'

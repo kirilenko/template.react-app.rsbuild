@@ -42,13 +42,13 @@ const rules = {
         'src/**/*',
         '../*',
         '../**/*',
-        '@/app/**/*',
+        '@/app/!(config)/**/*', // use @/app/something only except @/app/config
         '@/entities/**/*', // use @/entities/something only
         '@/modules/**/*', // use @/modules/something only
         '@/shared/!(lib|ui)/**/*',
       ],
     },
-  ], // - for local import only from fsd-index (features sliced design)
+  ],
 
   'import/prefer-default-export': 'off', // - for reexport from index
 

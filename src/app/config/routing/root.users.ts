@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 
+import { paths } from '@/app/config/paths'
 import Users from '@/pages/users'
 import { RouteConfig } from '@/shared/routing'
 
@@ -11,7 +12,7 @@ const users: RouteConfig = {
       component: lazy(() => import('@/pages/users/user')),
       id: 'user',
       isLazy: true,
-      path: ':userId',
+      path: paths.root.users.user.index,
     },
     usersIndex: {
       component: lazy(() => import('@/pages/users/users-index')),
@@ -20,7 +21,7 @@ const users: RouteConfig = {
       isLazy: true,
     },
   },
-  path: '/users',
+  path: paths.root.users.index,
 }
 
 export { users }

@@ -1,5 +1,6 @@
 import { lazy } from 'react'
 
+import { paths } from '@/app/config/paths'
 import { Home } from '@/pages/home'
 import { RouteConfig } from '@/shared/routing'
 import { about } from './root.about'
@@ -10,7 +11,7 @@ const routingConfig: Record<string, RouteConfig> = {
   home: {
     component: Home,
     id: 'home',
-    path: '/',
+    path: paths.root.index,
   },
   noMatch: {
     component: lazy(() => import('@/pages/no-match')),

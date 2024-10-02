@@ -9,7 +9,7 @@ const UserList: FC = () => (
       <NavLink
         className="m-2 block text-blue-400 hover:text-blue-200 [&.active]:text-red-400 [&.active]:underline [&.active]:hover:cursor-default"
         key={user.id}
-        to={`/users/${user.id}`}
+        to={user.id}
       >
         <div className="mb-4" key={user.id}>
           <div className="mb-2 font-bold">{user.name}</div>
