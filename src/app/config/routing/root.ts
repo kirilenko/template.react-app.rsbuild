@@ -3,6 +3,7 @@ import { lazy } from 'react'
 import { Home } from '@/pages/home'
 import { RouteConfig } from '@/shared/routing'
 import { about } from './root.about'
+import { users } from './root.users'
 
 const routingConfig: Record<string, RouteConfig> = {
   about,
@@ -17,12 +18,7 @@ const routingConfig: Record<string, RouteConfig> = {
     isLazy: true,
     path: '*',
   },
-  users: {
-    component: lazy(() => import('@/pages/users')),
-    id: 'users',
-    isLazy: true,
-    path: '/users',
-  },
+  users,
 }
 
 export { routingConfig }

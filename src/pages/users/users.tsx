@@ -1,21 +1,20 @@
 import { FC } from 'react'
-import { Helmet } from 'react-helmet-async'
-import { loremIpsum } from 'lorem-ipsum'
+import { Outlet } from 'react-router'
 
+import { UserList } from '@/modules/user-list'
 import { FadeContainer } from '@/shared/animation'
 
 const Users: FC = () => (
-  <>
-    <Helmet>
-      <title>Users</title>
-    </Helmet>
-    <FadeContainer id="users">
-      <div className="absolute left-0 top-0 h-full w-full overflow-y-auto bg-stone-800 px-8 py-16">
-        <h1 className="mb-4 text-4xl font-bold text-white">Users</h1>
-        {loremIpsum({ count: 5, units: 'paragraphs' })}
+  <FadeContainer id="users">
+    <div className="absolute left-0 top-0 flex h-full w-full flex-col items-stretch justify-stretch overflow-y-auto bg-stone-800">
+      <div className="flex flex-1 items-stretch justify-stretch border border-amber-500">
+        <UserList />
+        <div className="relative flex-1 border border-blue-200">
+          <Outlet />
+        </div>
       </div>
-    </FadeContainer>
-  </>
+    </div>
+  </FadeContainer>
 )
 
 export { Users }
