@@ -4,23 +4,38 @@ type MenuItemConfig = {
   id: string
   path: string
   title: string
+  isPrivate?: boolean
+  isPublicOnly?: boolean
 }
 
 const menuConfig: MenuItemConfig[] = [
   {
     id: 'home',
     path: paths.root.index,
-    title: 'Home',
+    title: 'Home (public)',
   },
   {
     id: 'about',
     path: paths.root.about.index,
-    title: 'About',
+    title: 'About (public)',
   },
   {
     id: 'users',
+    isPrivate: true,
     path: paths.root.users.index,
-    title: 'Users',
+    title: 'Users (private)',
+  },
+  {
+    id: 'logout',
+    isPrivate: true,
+    path: paths.root.logout.index,
+    title: 'Logout',
+  },
+  {
+    id: 'login',
+    isPublicOnly: true,
+    path: paths.root.login.index,
+    title: 'Login',
   },
 ]
 

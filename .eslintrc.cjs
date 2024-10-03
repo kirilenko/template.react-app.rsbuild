@@ -68,6 +68,8 @@ const rules = {
     { endOfLine: 'auto', usePrettierrc: true },
   ],
 
+  'react/display-name': 'off', // - for anonymous components in HOCs
+
   'react/function-component-definition': 'off', // - for defining component as a function-declaration
 
   'react/jsx-filename-extension': 'off', // - for jsx in tsx

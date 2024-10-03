@@ -7,11 +7,13 @@ import { RouteConfig } from '@/shared/routing'
 const users: RouteConfig = {
   component: Users,
   id: 'users',
+  isPrivate: true,
   nestedRouteConfig: {
     user: {
       component: lazy(() => import('@/pages/users/user')),
       id: 'user',
       isLazy: true,
+      isPrivate: true,
       path: paths.root.users.user.index,
     },
     usersIndex: {
@@ -19,6 +21,7 @@ const users: RouteConfig = {
       id: 'usersIndex',
       index: true, // - w/o path
       isLazy: true,
+      isPrivate: true,
     },
   },
   path: paths.root.users.index,

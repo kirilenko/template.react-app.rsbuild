@@ -1,26 +1,23 @@
 type PathConfig = Record<'index', string>
 
-type RawPaths = { [p: string]: PathConfig | RawPaths }
+type Paths = { [p: string]: PathConfig | Paths }
 
 const paths = {
   root: {
     about: {
-      achievements: {
-        index: 'achievements',
-      },
+      achievements: { index: 'achievements' },
       index: '/about',
-      intention: {
-        index: 'intention',
-      },
+      intention: { index: 'intention' },
     },
     index: '/',
+    login: { index: '/login' },
+    logout: { index: '/logout' },
+    restore: { index: '/restore' },
     users: {
       index: '/users',
-      user: {
-        index: ':userId',
-      },
+      user: { index: ':userId' },
     },
   },
-} satisfies RawPaths
+} satisfies Paths
 
 export { paths }
