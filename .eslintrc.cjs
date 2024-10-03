@@ -122,6 +122,9 @@ const extendsDict = {
   base: [
     'eslint:recommended', // from eslint: enables eslint-core rules
     'plugin:import/recommended', // from enables eslint-plugin-import
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   prettier: [
     'plugin:prettier/recommended', // from eslint-plugin-prettier: enables eslint-plugin-prettier and eslint-config-prettier (runs Prettier as an ESLint rule)
