@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { loremIpsum } from 'lorem-ipsum'
 
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const Home: FC = () => (
   <>
@@ -18,4 +19,4 @@ const Home: FC = () => (
   </>
 )
 
-export { Home }
+export default withRenderLog(Home)

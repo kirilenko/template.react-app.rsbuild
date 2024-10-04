@@ -45,7 +45,7 @@ const rules = {
         '@/app/!(config)/**/*', // use @/app/something only except @/app/config
         '@/entities/**/*', // use @/entities/something only
         '@/modules/**/*', // use @/modules/something only
-        '@/shared/!(ui)/**/*',
+        '@/shared/**/*',
       ],
     },
   ],

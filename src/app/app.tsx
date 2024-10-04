@@ -5,12 +5,15 @@ import { loremIpsum } from 'lorem-ipsum'
 import { env } from '@/app/config/env'
 import { routingConfig } from '@/app/config/routing'
 import { Menu } from '@/modules/menu'
+import { useRenderLog } from '@/shared/render-log'
 import { createRoute } from '@/shared/routing'
 import { withProviders } from './providers'
 
 import './app.css'
 
-const App: FC = withProviders(() => {
+const App: FC = () => {
+  useRenderLog()('App')()
+
   return (
     <>
       <div className="flex h-full w-full items-stretch justify-stretch">
@@ -29,6 +32,6 @@ const App: FC = withProviders(() => {
       <span className="hidden">{env.PUBLIC_TIMESTAMP}</span>
     </>
   )
-})
+}
 
-export { App }
+export default withProviders(App)

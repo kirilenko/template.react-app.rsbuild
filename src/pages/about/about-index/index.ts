@@ -1,1 +1,1 @@
-export { AboutIndex as default } from './about-index'
+export { default } from './about-index'

@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { HashRouter as Router } from 'react-router-dom'
 
 import { paths } from '@/app/config/paths'
+import { RenderLogProvider } from '@/shared/render-log'
 import { RoutingProvider } from '@/shared/routing'
 
 const withProviders =
@@ -17,13 +18,18 @@ const withProviders =
     }
 
     return (
-      <HelmetProvider>
-        <Router>
-          <RoutingProvider {...{ authPaths }}>
-            <Component {...props} />
-          </RoutingProvider>
-        </Router>
-      </HelmetProvider>
+      <RenderLogProvider
+        debugEnabled={import.meta.env.MODE !== 'production'}
+        isStrictMode={import.meta.env.MODE === 'development'}
+      >
+        <HelmetProvider>
+          <Router>
+            <RoutingProvider {...{ authPaths }}>
+              <Component {...props} />
+            </RoutingProvider>
+          </Router>
+        </HelmetProvider>
+      </RenderLogProvider>
     )
   }
 

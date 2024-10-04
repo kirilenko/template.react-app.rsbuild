@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { storyListMock, StoryListModel } from '@/entities/story-list'
+import { withRenderLog } from '@/shared/render-log'
 
 type Props = {
   userId: string
@@ -27,4 +28,4 @@ const StoryList: FC<Props> = ({ userId }) => {
   ))
 }
 
-export { StoryList }
+export default withRenderLog(StoryList)

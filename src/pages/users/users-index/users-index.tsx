@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
+import { withRenderLog } from '@/shared/render-log'
+
 const UsersIndex: FC = () => (
   <>
     <Helmet>
@@ -12,4 +14,4 @@ const UsersIndex: FC = () => (
   </>
 )
 
-export { UsersIndex }
+export default withRenderLog(UsersIndex)

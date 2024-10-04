@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 import { useRoutingContext } from '@/shared/routing'
 
 const Restore: FC = () => {
@@ -26,4 +27,4 @@ const Restore: FC = () => {
     </>
   )
 }
-export { Restore }
+export default withRenderLog(Restore)

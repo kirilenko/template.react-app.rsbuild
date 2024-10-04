@@ -1,1 +1,1 @@
-export { Restore as default } from './restore'
+export { default } from './restore'

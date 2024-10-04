@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const NoMatch: FC = () => (
   <>
@@ -16,4 +17,4 @@ const NoMatch: FC = () => (
   </>
 )
 
-export { NoMatch }
+export default withRenderLog(NoMatch)

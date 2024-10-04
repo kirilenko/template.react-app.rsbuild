@@ -1,1 +1,1 @@
-export { Achievements as default } from './achievements'
+export { default } from './achievements'

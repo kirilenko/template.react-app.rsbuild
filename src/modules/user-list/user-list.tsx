@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { userListMock } from '@/entities/user-list'
+import { withRenderLog } from '@/shared/render-log'
 
 const UserList: FC = () => (
   <div className="w-[256px] flex-none border-r border-stone-400 p-8">
@@ -17,4 +18,4 @@ const UserList: FC = () => (
   </div>
 )
 
-export { UserList }
+export default withRenderLog(UserList)

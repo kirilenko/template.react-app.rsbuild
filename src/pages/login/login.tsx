@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import { paths } from '@/app/config/paths'
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 import { useRoutingContext } from '@/shared/routing'
 
 const Login: FC = () => {
@@ -35,4 +36,4 @@ const Login: FC = () => {
     </>
   )
 }
-export { Login }
+export default withRenderLog(Login)

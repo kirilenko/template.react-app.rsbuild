@@ -1,1 +1,1 @@
-export { UsersIndex as default } from './users-index'
+export { default } from './users-index'

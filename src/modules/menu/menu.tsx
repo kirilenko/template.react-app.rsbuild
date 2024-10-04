@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { menuConfig } from '@/app/config/menu'
+import { withRenderLog } from '@/shared/render-log'
 import { useRoutingContext } from '@/shared/routing'
 
 const Menu: FC = () => {
@@ -23,4 +24,4 @@ const Menu: FC = () => {
     ))
 }
 
-export { Menu }
+export default withRenderLog(Menu)

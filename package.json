@@ -11,7 +11,7 @@
     "format": "pnpm eslint && pnpm pretty && scripts/postformat.sh",
     "test": "dotenvx run --env-file=.env.common --env-file=.env.test -- jest --watch",
     "test:ci": "dotenvx run --env-file=.env.common --env-file=.env.test -- jest --ci",
-    "build:dev": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode development",
+    "build:dev": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode staging",
     "build:stage": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode staging",
     "build:main": "dotenvx run --env-file=.env.common -- rsbuild build --env-mode production",
     "preview": "rsbuild preview"

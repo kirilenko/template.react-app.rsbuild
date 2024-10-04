@@ -1,7 +1,9 @@
 import { ComponentType, FC, LazyExoticComponent, Suspense } from 'react'
 import { Navigate, useLocation } from 'react-router'
 
-import { useRoutingContext } from '@/shared/routing/use.routing.context'
+import { useRoutingContext } from './use.routing.context'
+
+// todo: remove extra rendering of the parent page
 
 type RouteElementProps = {
   component: ComponentType | LazyExoticComponent<ComponentType>

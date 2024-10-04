@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import { paths } from '@/app/config/paths'
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const AboutIndex: FC = () => (
   <>
@@ -29,4 +30,4 @@ const AboutIndex: FC = () => (
   </>
 )
 
-export { AboutIndex }
+export default withRenderLog(AboutIndex)

@@ -5,6 +5,7 @@ import { loremIpsum } from 'lorem-ipsum'
 
 import { paths } from '@/app/config/paths'
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const Achievements: FC = () => (
   <>
@@ -25,4 +26,4 @@ const Achievements: FC = () => (
   </>
 )
 
-export { Achievements }
+export default withRenderLog(Achievements)

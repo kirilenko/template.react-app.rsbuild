@@ -3,6 +3,7 @@ import { Outlet } from 'react-router'
 
 import { UserList } from '@/modules/user-list'
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const Users: FC = () => (
   <FadeContainer id="users">
@@ -17,4 +18,4 @@ const Users: FC = () => (
   </FadeContainer>
 )
 
-export { Users }
+export default withRenderLog(Users)

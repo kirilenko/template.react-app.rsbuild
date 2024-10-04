@@ -5,6 +5,7 @@ import { useParams } from 'react-router'
 import { userListMock } from '@/entities/user-list'
 import { StoryList } from '@/modules/story-list'
 import { FadeContainer } from '@/shared/animation'
+import { withRenderLog } from '@/shared/render-log'
 
 const User: FC = () => {
   const { userId } = useParams()
@@ -40,4 +41,4 @@ const User: FC = () => {
   )
 }
 
-export { User }
+export default withRenderLog(User)
