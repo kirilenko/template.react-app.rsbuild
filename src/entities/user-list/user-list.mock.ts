@@ -1,9 +1,9 @@
 import { UserListModel } from './user-list.model'
 
 const userListMock: UserListModel = [
-  { id: '1', name: 'John' },
-  { id: '2', name: 'Doe' },
-  { id: '3', name: 'Jane' },
+  { id: 'user-1', name: 'John' },
+  { id: 'user-2', name: 'Doe' },
+  { id: 'user-3', name: 'Jane' },
 ]
 
 export { userListMock }
