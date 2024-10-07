@@ -20,6 +20,12 @@ const menuConfig: MenuItemConfig[] = [
     title: 'About (public)',
   },
   {
+    id: 'moderation',
+    isPrivate: true,
+    path: paths.root.moderation.index,
+    title: 'Moderation (private)',
+  },
+  {
     id: 'users',
     isPrivate: true,
     path: paths.root.users.index,

@@ -10,6 +10,10 @@ const paths = {
     index: '/',
     login: { index: 'login' },
     logout: { index: 'logout' },
+    moderation: {
+      index: 'moderation',
+      user: { index: ':userId' },
+    },
     restore: { index: 'restore' },
     users: {
       index: 'users',

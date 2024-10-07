@@ -4,6 +4,7 @@ import { Home } from '@/pages/root/home'
 import { Login } from '@/pages/root/login'
 import { RouteObjectWithAuth } from '@/shared/router'
 import { routerRootAboutConfig } from './router.root.about'
+import { routerRootModerationConfig } from './router.root.moderation'
 import { routerRootUsersConfig } from './router.root.users'
 
 const routerRootConfig: RouteObjectWithAuth[] = [
@@ -11,6 +12,8 @@ const routerRootConfig: RouteObjectWithAuth[] = [
     Component: Root,
     children: [
       routerRootAboutConfig,
+      routerRootModerationConfig,
+      routerRootUsersConfig,
       {
         Component: Home,
         id: 'home',
@@ -38,7 +41,6 @@ const routerRootConfig: RouteObjectWithAuth[] = [
         }),
         path: paths.root.restore.index,
       },
-      routerRootUsersConfig,
     ],
     id: 'root',
     path: paths.root.index,
