@@ -1,8 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useRenderLog } from '@/shared/render-log'
-
 type Props = {
   duration?: number
   id: string
@@ -13,8 +11,7 @@ const FadeContainer: FC<PropsWithChildren<Props>> = ({
   duration = 0.3,
   id,
 }) => {
-  useRenderLog()(`FadeContainer.${id}`)()
-
+  // todo: add eslint rule to set arrow function as preferred
   return (
     <AnimatePresence>
       <motion.div

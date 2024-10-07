@@ -1,18 +1,12 @@
 import { paths } from '@/app/config/paths'
 import { Users } from '@/pages/root/users'
 import { RouteObjectWithAuth } from '@/shared/router'
+import { routerRootUsersUserConfig } from './router.root.users.user'
 
 const routerRootUsersConfig: RouteObjectWithAuth = {
   Component: Users,
   children: [
-    {
-      id: 'user',
-      isPrivate: true,
-      lazy: async () => ({
-        Component: (await import('@/pages/root/users/user')).User,
-      }),
-      path: paths.root.users.user.index,
-    },
+    routerRootUsersUserConfig,
     {
       id: 'users-index',
       index: true,

@@ -17,7 +17,13 @@ const paths = {
     restore: { index: 'restore' },
     users: {
       index: 'users',
-      user: { index: ':userId' },
+      user: {
+        circles: {
+          circle: { index: ':circleId' },
+          index: 'circles',
+        },
+        index: ':userId',
+      },
     },
   },
 } satisfies Paths
