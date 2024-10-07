@@ -45,7 +45,7 @@ const rules = {
         '@/app/!(config)/**/*', // use @/app/something only except @/app/config
         '@/entities/**/*', // use @/entities/something only
         '@/modules/**/*', // use @/modules/something only
-        '@/shared/**/*',
+        '@/shared/!(ui)/**/*',
       ],
     },
   ],
@@ -135,6 +135,7 @@ const extendsDict = {
     'plugin:react-hooks/recommended', // from eslint-plugin-react-hooks
     'plugin:jsx-a11y/recommended', // from eslint-plugin-jsx-a11y
   ],
+  storybook: ['plugin:storybook/recommended'], // from eslint-plugin-storybook
   typescript: [
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript', // from enables eslint-plugin-import
@@ -149,7 +150,8 @@ module.exports = {
     ...extendsDict.base,
     ...extendsDict.typescript,
     ...extendsDict.react,
-    ...extendsDict.prettier, // should be at last
+    ...extendsDict.storybook, // should be near the end
+    ...extendsDict.prettier, // should be at the end
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',

@@ -6,6 +6,7 @@
   "scripts": {
     "setup": "./scripts/nvm-use.sh && pnpm i && pnpm audit",
     "dev": "dotenvx run --env-file=.env.common -- rsbuild dev --open",
+    "storybook": "dotenvx run --env-file=.env.common --env-file=.env.local --env-file=.env -- storybook dev -p 3002 --no-open",
     "eslint": "eslint . --fix 'src/**/**.{ts,tsx}' --report-unused-disable-directives --max-warnings 0",
     "pretty": "prettier --write 'src/**/**.{ts,tsx,css,style.ts}'",
     "format": "pnpm eslint && pnpm pretty && scripts/postformat.sh",
@@ -30,6 +31,15 @@
     "@rsbuild/core": "^1.0.4",
     "@rsbuild/plugin-eslint": "^1.0.3",
     "@rsbuild/plugin-react": "^1.0.2",
+    "@storybook/addon-a11y": "^8.3.5",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.2",
+    "@storybook/addon-links": "^8.3.2",
+    "@storybook/addon-themes": "^8.3.5",
+    "@storybook/blocks": "^8.3.2",
+    "@storybook/react": "^8.3.2",
+    "@storybook/react-vite": "^8.3.2",
+    "@storybook/test": "^8.3.2",
     "@swc/core": "^1.4.8",
     "@swc/jest": "^0.2.36",
     "@testing-library/jest-dom": "^6.4.2",
@@ -50,15 +60,21 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "eslint-plugin-react-refresh": "^0.4.12",
+    "eslint-plugin-storybook": "^0.8.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
+    "storybook": "^8.3.5",
+    "storybook-react-rsbuild": "^0.1.1",
     "tailwindcss": "^3.4.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.0"
+  },
+  "resolutions": {
+    "cookie": ">=0.7.0"
   }
 }
