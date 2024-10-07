@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { menuConfig } from '@/app/config/menu'
 import { withRenderLog } from '@/shared/render-log'
-import { useRoutingContext } from '@/shared/routing'
+import { useRouterContext } from '@/shared/router'
 
 const Menu: FC = () => {
-  const { authed } = useRoutingContext()
+  const { authed } = useRouterContext()
 
   return menuConfig
     .filter(({ isPrivate, isPublicOnly }) => {
@@ -24,4 +24,4 @@ const Menu: FC = () => {
     ))
 }
 
-export default withRenderLog(Menu)
+export default memo(withRenderLog(Menu))

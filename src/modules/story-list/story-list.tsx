@@ -3,6 +3,8 @@ import { FC } from 'react'
 import { storyListMock, StoryListModel } from '@/entities/story-list'
 import { withRenderLog } from '@/shared/render-log'
 
+// todo: add renderId to call StoryList component
+
 type Props = {
   userId: string
 }

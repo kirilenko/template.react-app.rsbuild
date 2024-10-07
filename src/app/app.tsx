@@ -1,37 +1,48 @@
 import { FC } from 'react'
-import { Routes } from 'react-router-dom'
-import { loremIpsum } from 'lorem-ipsum'
+import { HelmetProvider } from 'react-helmet-async'
 
 import { env } from '@/app/config/env'
-import { routingConfig } from '@/app/config/routing'
-import { Menu } from '@/modules/menu'
-import { useRenderLog } from '@/shared/render-log'
-import { createRoute } from '@/shared/routing'
-import { withProviders } from './providers'
+import { paths } from '@/app/config/paths'
+import { routerRootConfig } from '@/app/config/router'
+import { RenderLogProvider } from '@/shared/render-log'
+import {
+  getAbsolutePath,
+  RouterContextValue,
+  RouterProvider,
+} from '@/shared/router'
 
 import './app.css'
 
 const App: FC = () => {
-  useRenderLog()('App')()
+  // todo: fix eslint config (catch the case when useMemo/useCallback is needed)
+  const absoluteAuthPaths: Record<
+    keyof RouterContextValue['absoluteAuthPaths'],
+    string
+  > = {
+    login: getAbsolutePath({ path: 'root.login', paths }),
+    logout: getAbsolutePath({ path: 'root.logout', paths }),
+    privateStart: getAbsolutePath({ path: 'root', paths }),
+    publicStart: getAbsolutePath({ path: 'root', paths }),
+    restore: getAbsolutePath({ path: 'root.restore', paths }),
+  }
 
   return (
     <>
-      <div className="flex h-full w-full items-stretch justify-stretch">
-        <div className="flex w-64 flex-none flex-col items-stretch justify-start overflow-y-auto bg-stone-600 px-8 py-16">
-          <h1 className="text-xl">Rsbuild w/ React</h1>
-          <hr className="my-8 border-gray-300" />
-          <Menu />
-          <hr className="my-8 border-gray-300" />
-          {loremIpsum({ count: 10 })}
-        </div>
-        <div className="relative flex-1">
-          <Routes>{Object.values(routingConfig).map(createRoute)}</Routes>
-        </div>
-      </div>
+      <RenderLogProvider
+        debugEnabled={import.meta.env.MODE !== 'production'}
+        isStrictMode={import.meta.env.MODE === 'development'}
+      >
+        <HelmetProvider>
+          <RouterProvider
+            {...{ absoluteAuthPaths }}
+            config={routerRootConfig}
+          />
+        </HelmetProvider>
+      </RenderLogProvider>
       <span className="hidden">{env.PUBLIC_COMMON_VAR}</span>
       <span className="hidden">{env.PUBLIC_TIMESTAMP}</span>
     </>
   )
 }
 
-export default withProviders(App)
+export default App

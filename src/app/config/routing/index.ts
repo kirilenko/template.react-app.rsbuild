@@ -1,1 +1,0 @@
-export { routingConfig } from './root'
