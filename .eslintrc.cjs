@@ -1,4 +1,5 @@
-const internalPackages = '@/app|@/entities|@/modules|@/pages|@/public|@/shared'
+const internalPackages =
+  '@/app|@/assets|@/entities|@/modules|@/pages|@/public|@/shared'
 
 const styleExtensions = '\\.style$|\\.s?css$'
 

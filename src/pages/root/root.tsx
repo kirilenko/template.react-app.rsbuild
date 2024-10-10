@@ -4,10 +4,12 @@ import { loremIpsum } from 'lorem-ipsum'
 
 import { Menu } from '@/modules/menu'
 import { Tmp } from '@/shared/ui/tmp'
+import { ViteLogo } from '@/shared/ui/vite-logo'
 
 const Root: FC = () => (
   <div className="flex h-full w-full items-stretch justify-stretch">
     <div className="flex w-64 flex-none flex-col items-stretch justify-start overflow-y-auto bg-stone-600 px-8 py-16">
+      <ViteLogo className="mx-auto mb-8 w-24" />
       <Tmp
         handleClick={() => {
           console.log('%c• Tmp: click', 'color: orange') // eslint-disable-line no-console
